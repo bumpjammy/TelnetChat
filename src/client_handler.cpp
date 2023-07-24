@@ -76,6 +76,16 @@ bool client_handler::interpret_command(std::string command, std::string args) {
         server::instance->send_to_all(username + " is now AFK\n", client_socket);
         return false;
     }
+    if(command == "$users") {
+        std::string users = "Users online: \n";
+        for(std::pair<int, std::string> usernames : server::instance->usernames) {
+            users += "-" + usernames.second + ",\n";
+        }
+        //Remove last comma
+        users = users.substr(0, users.length() - 3);
+        send_to_socket(users + "\n");
+        return false;
+    }
     else {
         send_to_socket("Invalid command\n");
         return false;

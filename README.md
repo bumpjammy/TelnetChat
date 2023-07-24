@@ -16,4 +16,5 @@ The server has a few basic commands:<br>
 - ```$help``` - Displays a list of commands.
 - ```$color <color>``` - Allows user to pick from a list of colors for their username.
 - ```$afk``` - Announces that the user is away from keyboard.
+- ```$users``` - Displays a list of users currently connected to the server.
 - ```$exit``` - Disconnects the user from the server.
